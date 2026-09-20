@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>¡Hola! Registro gratis y reclama un bono de S/ 380</title>
+
+    <!-- Meta Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        
+        // ⚠️ 请在此处替换你的 Facebook Pixel ID
+        fbq('init', '28477425698541292');
+        fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <!-- 在 Head 中随机提取图片路径 -->
+    <script>
+        (function() {
+            var LOCAL_IMAGES = [
+                "https://6969.buzz/photo/1.jpg",
+                "https://6969.buzz/photo/2.jpg",
+                "https://6969.buzz/photo/3.jpg",
+                "https://6969.buzz/photo/4.jpg",
+                "https://6969.buzz/photo/5.jpg",
+                "https://6969.buzz/photo/7.jpg",
+                "https://6969.buzz/photo/8.jpg",
+                "https://6969.buzz/photo/9.jpg",
+                "https://6969.buzz/photo/6.jpg"
+            ];
+            window.__SELECTED_IMAGE__ = LOCAL_IMAGES[Math.floor(Math.random() * LOCAL_IMAGES.length)];
+        })();
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    #fff7fa 0%,
+                    #fcebf2 42%,
+                    #f4dce7 76%,
+                    #ecd3df 100%
+                );
+
+            color: #30242b;
+
+            display: flex;
+            justify-content: center;
+
+            padding: 5px;
+            padding-bottom: 95px;
+
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 430px;
+        }
+
+        /* PHOTO */
+        .photo-card {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 22px;
+            background: #f3e9ee;
+            box-shadow: 0 8px 22px rgba(87, 35, 64, .10);
+        }
+
+        .main-photo {
+            width: 100%;
+            height: auto;
+            min-height: 0;
+            max-height: none;
+            display: block;
+            object-fit: contain;
+            object-position: center center;
+            transform-origin: center center;
+            animation: photoBreath 5.5s ease-in-out infinite;
+            user-select: none;
+            -webkit-user-drag: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .main-photo.loaded {
+            opacity: 1;
+        }
+
+        @keyframes photoBreath {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.012); }
+        }
+
+        /* CONTENT */
+        .content {
+            text-align: center;
+            padding: 15px 7px 10px;
+        }
+
+        /* STORY & RATING FUSED */
+        .story {
+            font-size: 15.5px;
+            line-height: 1.58;
+            font-weight: 500;
+            color: #44343d;
+            letter-spacing: -.12px;
+        }
+
+        .break {
+            display: block;
+            height: 6px;
+        }
+
+        .highlight-pink {
+            display: inline;
+            color: #d44d82;
+            font-weight: 800;
+            background: linear-gradient(180deg, transparent 58%, rgba(237,104,153,.20) 58%);
+            padding: 0 2px;
+        }
+
+        .highlight-purple {
+            display: inline;
+            color: #a43f91;
+            font-weight: 800;
+            background: linear-gradient(180deg, transparent 58%, rgba(183,85,170,.17) 58%);
+            padding: 0 2px;
+        }
+
+        /* RATING BAR */
+        .rating-bar {
+            margin: 12px auto 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #44343d;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid rgba(242, 115, 159, 0.2);
+        }
+
+        .stars {
+            color: #ffb400;
+            letter-spacing: 1px;
+        }
+
+        /* BONUS & REWARD CARD */
+        .reward-card {
+            margin-top: 8px;
+            padding: 14px 12px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #ffffff 0%, #fff0f5 100%);
+            border: 2px solid #f2739f;
+            box-shadow: 0 6px 18px rgba(212, 77, 130, 0.12);
+            text-align: left;
+        }
+
+        .reward-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #d44d82;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .reward-badge {
+            background: #d44d82;
+            color: #fff;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .prizes-list {
+            list-style: none;
+            font-size: 12.5px;
+            color: #55414c;
+            line-height: 1.65;
+            margin-bottom: 10px;
+            background: rgba(255,255,255,0.9);
+            padding: 8px 10px;
+            border-radius: 10px;
+        }
+
+        .prizes-list li strong {
+            color: #a43f91;
+        }
+
+        /* STEPS LIST */
+        .steps-container {
+            margin-top: 8px;
+            border-top: 1px dashed rgba(212, 77, 130, 0.3);
+            padding-top: 8px;
+        }
+
+        .steps-title {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #44343d;
+            margin-bottom: 6px;
+        }
+
+        .step-item {
+            font-size: 12px;
+            color: #66515c;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-num {
+            background: #f2739f;
+            color: white;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10.5px;
+            font-weight: bold;
+            margin-right: 7px;
+            flex-shrink: 0;
+        }
+
+        /* Trust Section & Security Badges */
+        .trust-section {
+            margin-top: 15px;
+            padding: 12px 10px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            text-align: center;
+        }
+
+        .trust-title {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #7a6572;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 10px;
+        }
+
+        .trust-badges-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .svg-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: #ffffff;
+            border: 1px solid #e1d5dc;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #4a3e46;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .payment-badges-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .pay-card {
+            background: #ffffff;
+            border: 1px solid #e1d5dc;
+            border-radius: 5px;
+            padding: 3px 7px;
+            font-size: 10.5px;
+            font-weight: 800;
+            color: #333;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+            height: 24px;
+        }
+
+        /* FIXED BOTTOM CTA WRAPPER */
+        .fixed-cta-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 10px 12px 14px;
+            background: rgba(253, 242, 247, 0.94);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 -4px 20px rgba(87, 35, 64, 0.12);
+            z-index: 999;
+        }
+
+        .fixed-cta-inner {
+            width: 100%;
+            max-width: 430px;
+        }
+
+        .cta {
+            position: relative;
+            width: 100%;
+            min-height: 54px;
+            border: 0;
+            border-radius: 16px;
+            cursor: pointer;
+            color: #fff;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: -.15px;
+            background: linear-gradient(135deg, #f2739f 0%, #dc5387 45%, #b95499 100%);
+            box-shadow: 0 8px 24px rgba(205,75,130,.35);
+            overflow: hidden;
+            transition: transform .12s ease, box-shadow .12s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 65%;
+            height: 100%;
+            background: linear-gradient(105deg, transparent, rgba(255,255,255,.3), transparent);
+            transform: skewX(-20deg);
+            animation: buttonShine 3s ease-in-out infinite;
+        }
+
+        .cta span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta:active {
+            transform: scale(.975);
+        }
+
+        @keyframes buttonShine {
+            0%, 58% { left: -120%; }
+            82%, 100% { left: 140%; }
+        }
+
+        /* MOBILE OPTIMIZATIONS */
+        @media (max-width: 480px) {
+            body { padding: 4px; padding-bottom: 90px; }
+            .photo-card { border-radius: 20px; }
+            .content { padding: 12px 5px 10px; }
+            .story { font-size: 15px; }
+            .cta { min-height: 52px; font-size: 14px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="page">
+
+    <!-- HERO PHOTO -->
+    <section class="photo-card">
+        <img
+            id="heroImage"
+            class="main-photo"
+            alt="Ananya"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            draggable="false"
+            onload="this.classList.add('loaded')"
+        >
+        <script>
+            document.getElementById('heroImage').src = window.__SELECTED_IMAGE__;
+        </script>
+    </section>
+
+    <section class="content">
+
+        <!-- 第一人称的故事文案 -->
+        <div class="story">
+            <span class="highlight-pink">
+                ¡Hola! Soy Ananya, profesora de la Universidad Nacional Mayor de San Marcos… 🫣
+            </span>
+
+            <span class="break"></span>
+            <span>Sola en casa esta tarde después de un día largo y agotador. Para ser honesta, aquí todo es muy tranquilo y estoy buscando a alguien sincero para conversar y compartir mi día… 😅</span>
+
+            <span class="break"></span>
+            <span class="highlight-purple">
+                ¿Quieres conocerme mejor? Siempre estoy activa en esta app: ¡es totalmente privada, segura y fácil para hacer videochats!
+            </span>
+
+            <span class="break"></span>
+            <span>
+                ¿Y lo mejor? Los nuevos amigos de Perú reciben un <strong>bono en efectivo garantizado de S/ 380</strong> para retirar al instante a través de Yape/Plin, ¡más <strong>10 giros de la suerte gratis</strong>! 
+                Es gratis unirse, ¡descárgala ahora y acompáñame! 💕
+            </span>
+        </div>
+
+        <!-- 4.6 星评分标准 -->
+        <div class="rating-bar">
+            <span class="stars">★ ★ ★ ★ ½</span>
+            <span>Calificación 4.6 / 5.0 (+28,500 reseñas en Perú)</span>
+        </div>
+
+        <!-- 2026年最新奖品卡片 -->
+        <div class="reward-card">
+            <div class="reward-title">🇵🇪 Bono de Bienvenida y Premios Oficiales 2026</div>
+            
+            <div class="reward-badge">Retiro Instantáneo Garantizado de S/ 380</div>
+            
+            <ul class="prizes-list">
+                <li>💰 <strong>Garantizado:</strong> Bono en efectivo de S/ 380 (Yape / Plin / Transferencia bancaria directa)</li>
+                <li>🎲 <strong>Extra:</strong> 10 giros de la suerte gratis</li>
+                <li>🥇 <strong>1er Premio:</strong> iPhone 18 Pro Max (512GB)</li>
+                <li>🥈 <strong>2do Premio:</strong> Tarjeta de regalo de S/ 1,800 en Amazon</li>
+                <li>🥉 <strong>3er Premio:</strong> Auriculares purificadores de aire Dyson Zone</li>
+                <li>🏅 <strong>4to Premio:</strong> S/ 250 en efectivo vía Yape</li>
+                <li>🎗️ <strong>5to Premio:</strong> 50 créditos VIP de videochat de bonificación</li>
+            </ul>
+
+            <div class="steps-container">
+                <div class="steps-title">Sigue estos sencillos pasos:</div>
+                <div class="step-item">
+                    <span class="step-num">1</span>
+                    <span>Haz clic en el botón de abajo para descargar la aplicación</span>
+                </div>
+                <div class="step-item">
+                    <span class="step-num">2</span>
+                    <span>Actualiza la aplicación a la última versión</span>
+                </div>
+                <div class="step-item">
+                    <span class="step-num">3</span>
+                    <span>Concede los permisos necesarios de la aplicación</span>
+                </div>
+                <div class="step-item">
+                    <span class="step-num">4</span>
+                    <span>Reclama el bono en efectivo, retira y obtén 10 giros de la suerte gratis</span>
+                </div>
+                <div class="step-item">
+                    <span class="step-num">5</span>
+                    <span>¡Chatea conmigo cara a cara por video!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 信任与支付徽标 -->
+        <div class="trust-section">
+            <div class="trust-title">🔒 Portal Peruano 100% Verificado, Seguro y Protegido</div>
+            
+            <div class="trust-badges-grid">
+                <span class="svg-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#2e7d32"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    SSL de 256 bits
+                </span>
+                <span class="svg-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#1565c0"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    McAfee Secure
+                </span>
+                <span class="svg-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#d84315"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-8-3z"/></svg>
+                    Norton Secured
+                </span>
+            </div>
+
+            <div class="payment-badges-grid">
+                <span class="pay-card" style="color:#7210bc; font-weight:900;">Yape</span>
+                <span class="pay-card" style="color:#00a3e0; font-weight:900;">Plin</span>
+                <span class="pay-card" style="color:#c0392b; font-weight:900;">BCP</span>
+                <span class="pay-card" style="color:#e67e22; font-weight:900;">Interbank</span>
+                <span class="pay-card" style="color:#1A1F71; font-style:italic; font-family:serif;">VISA</span>
+                <span class="pay-card" style="color:#EB001B;">Mastercard</span>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- 固定在底部的按钮 -->
+<div class="fixed-cta-container">
+    <div class="fixed-cta-inner">
+        <button class="cta" id="joinButton" type="button">
+            <span>¡Descarga la app, reclama S/ 380 y Videochat! 💕</span>
+        </button>
+    </div>
+</div>
+
+<!-- 触发与跳转逻辑 -->
+<script>
+    const TARGET_URL = "https://love.6969.buzz/?utm_source=da57dc555e50572d&ban=fb&j1=1&j2=1&j6=1&j8=1&j12=1&s1=170082&s2=2286167";
+
+    document.getElementById("joinButton").addEventListener("click", function () {
+        if (typeof window.fbq === 'function') {
+            window.fbq('track', 'CompleteRegistration');
+        }
+        window.location.href = TARGET_URL;
+    });
+</script>
+
+</body>
+</html>
