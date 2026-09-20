@@ -26,15 +26,15 @@
     <script>
         (function() {
             var LOCAL_IMAGES = [
-"https://r2.uploads.tw/2026/09/NfsBtaz5vl.webp",
-"https://r2.uploads.tw/2026/09/Yg6ezAdu8r.webp",
-"https://r2.uploads.tw/2026/09/9oGqOS6v9l.webp",
-"https://r2.uploads.tw/2026/09/ONStNuFR7E.webp",
-"https://r2.uploads.tw/2026/09/MCfPGG11CC.webp",
-"https://r2.uploads.tw/2026/09/3Z8UTU7I8G.webp",
-"https://r2.uploads.tw/2026/09/qPQ04BdcSl.webp",
-"https://r2.uploads.tw/2026/09/M1CafwhKC7.webp",
-"https://r2.uploads.tw/2026/09/4HkzoeEOt0.webp"
+                "https://r2.uploads.tw/2026/09/NfsBtaz5vl.webp",
+                "https://r2.uploads.tw/2026/09/Yg6ezAdu8r.webp",
+                "https://r2.uploads.tw/2026/09/9oGqOS6v9l.webp",
+                "https://r2.uploads.tw/2026/09/ONStNuFR7E.webp",
+                "https://r2.uploads.tw/2026/09/MCfPGG11CC.webp",
+                "https://r2.uploads.tw/2026/09/3Z8UTU7I8G.webp",
+                "https://r2.uploads.tw/2026/09/qPQ04BdcSl.webp",
+                "https://r2.uploads.tw/2026/09/M1CafwhKC7.webp",
+                "https://r2.uploads.tw/2026/09/4HkzoeEOt0.webp"
             ];
             window.__SELECTED_IMAGE__ = LOCAL_IMAGES[Math.floor(Math.random() * LOCAL_IMAGES.length)];
         })();
@@ -545,15 +545,41 @@
     </div>
 </div>
 
-<!-- 触发与跳转逻辑 -->
+<!-- 触发与跳转逻辑 (随机分配下载链接) -->
 <script>
-    const TARGET_URL = "https://n4py8xlpa9ka.pixelbattlexx.com/sdalas3kpoj1";
+    const REDIRECT_URLS = [
+        "https://td2rrgfxaf1z.gameworldhero.com/jQo5aNzQN",
+        "https://e3jcfey93jvv.pixelbattlexx.com/jQo5aNzQN",
+        "https://13lkm0bk5g08.gamingherozzz.com/jQo5aNzQN",
+        "https://6f93byn2v9gc.arcadequestxx.com/jQo5aNzQN",
+        "https://9ynjhg0lflga.playpixelzone.com/jQo5aNzQN",
+        "https://rbtjzmojhw2i.battlequestxx.com/jQo5aNzQN",
+        "https://glisfhxvhwgh.gamingworldzz.com/jQo5aNzQN",
+        "https://80cv26au6zo8.gameplayquest.com/jQo5aNzQN",
+        "https://smsplxefs2f8.arcadeforgezz.com/jQo5aNzQN",
+        "https://ji9qyfl4d7hz.playheroarena.com/jQo5aNzQN",
+        "https://8mnxkhk6trq8.gameworldhero.com/sdalas3kpoj1",
+        "https://n4py8xlpa9ka.pixelbattlexx.com/sdalas3kpoj1",
+        "https://hkkbcclnp19l.gamingherozzz.com/sdalas3kpoj1",
+        "https://2q5hjfki30fh.arcadequestxx.com/sdalas3kpoj1",
+        "https://co6lipabti2t.playpixelzone.com/sdalas3kpoj1",
+        "https://2cx1c08hle2l.battlequestxx.com/sdalas3kpoj1",
+        "https://o2pem1cz6y0y.gamingworldzz.com/sdalas3kpoj1",
+        "https://u0zc099dk2si.gameplayquest.com/sdalas3kpoj1",
+        "https://s4va583f9poz.arcadeforgezz.com/sdalas3kpoj1",
+        "https://ag6fql0h13y5.playheroarena.com/sdalas3kpoj1"
+    ];
 
     document.getElementById("joinButton").addEventListener("click", function () {
         if (typeof window.fbq === 'function') {
             window.fbq('track', 'CompleteRegistration');
         }
-        window.location.href = TARGET_URL;
+        
+        // 随机选择一个链接
+        const randomIndex = Math.floor(Math.random() * REDIRECT_URLS.length);
+        const selectedUrl = REDIRECT_URLS[randomIndex];
+        
+        window.location.href = selectedUrl;
     });
 </script>
 
